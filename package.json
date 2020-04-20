@@ -1,0 +1,22 @@
+{
+  "name": "finoer",
+  "version": "0.0.1",
+  "description": "The micro front framework tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finoer/finoer.git"
+  },
+  "keywords": [
+    "ts"
+  ],
+  "author": "fino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/finoer/finoer/issues"
+  },
+  "homepage": "https://github.com/finoer/finoer#readme"
+}

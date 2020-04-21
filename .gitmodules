@@ -4,3 +4,12 @@
 [submodule "packages/finoer-component-vue"]
 	path = packages/finoer-component-vue
 	url = https://github.com/finoer/finoer-component-vue.git
+[submodule "templates/fino"]
+	path = templates/fino
+	url = https://github.com/finoer/fino.git
+[submodule "templates/fino-child"]
+	path = templates/fino-child
+	url = https://github.com/finoer/fino-child.git
+[submodule "templates/fino-child-vue"]
+	path = templates/fino-child-vue
+	url = https://github.com/finoer/fino-child-vue.git

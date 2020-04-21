@@ -11,12 +11,16 @@
     "url": "git+https://github.com/finoer/finoer.git"
   },
   "keywords": [
-    "ts"
+    "ts","micro front"
   ],
   "author": "fino",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/finoer/finoer/issues"
   },
-  "homepage": "https://github.com/finoer/finoer#readme"
+  "homepage": "https://github.com/finoer/finoer#readme",
+  "dependencies": {
+    "sade": "^1.7.3",
+    "typescript": "^3.8.3"
+  }
 }

@@ -1,0 +1,6 @@
+[submodule "packages/finoer-core"]
+	path = packages/finoer-core
+	url = https://github.com/finoer/finoer-core.git
+[submodule "packages/finoer-component-vue"]
+	path = packages/finoer-component-vue
+	url = https://github.com/finoer/finoer-component-vue.git

@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/finoer/finoer#readme",
   "dependencies": {
+    "@microsoft/tsdoc": "^0.12.19",
     "@types/jest": "^25.2.1",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "chalk": "^4.0.0",
@@ -30,6 +31,7 @@
     "sade": "^1.7.3",
     "shelljs": "^0.8.3",
     "ts-jest": "^25.4.0",
+    "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
   },
   "devDependencies": {

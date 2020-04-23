@@ -49,8 +49,6 @@ function createConfig(output, plugins = []) {
                 tsconfigOverride: {
                   compilerOptions: {
                     sourceMap: output.sourcemap,
-                    declaration: shouldEmitDeclarations,
-                    declarationMap: shouldEmitDeclarations
                   },
                   exclude: ['**/__tests__', 'test-dts']
                 }

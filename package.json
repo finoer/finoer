@@ -2,9 +2,11 @@
   "name": "finoer",
   "version": "0.0.1",
   "description": "The micro front framework tools",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node scripts/dev.js",
+    "start": "rollup -c -w --environment TARGET:finoer-core"
   },
   "repository": {
     "type": "git",
@@ -23,18 +25,24 @@
   "dependencies": {
     "@microsoft/tsdoc": "^0.12.19",
     "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "chalk": "^4.0.0",
-    "eslint": "^6.8.0",
-    "jest": "^25.4.0",
-    "rollup": "^2.7.1",
     "sade": "^1.7.3",
     "shelljs": "^0.8.3",
+    "@typescript-eslint/parser": "^2.28.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.3.0",
+    "prettier": "^2.0.4",
+    "rollup": "^2.6.1",
+    "rollup-plugin-sourcemaps": "^0.5.0",
     "ts-jest": "^25.4.0",
+    "ts-node": "^7.0.1",
+    "tslib": "^1.11.1",
     "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
-    "@types/sade": "^1.6.0"
+    "rollup-plugin-typescript2": "^0.27.0"
   }
 }

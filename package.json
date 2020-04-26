@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node scripts/dev.js",
-    "start": "rollup -c -w --environment TARGET:finoer-core"
+    "build": "node scripts/build.js",
+    "docs": "node scripts/docs.js",
+    "init": "node scripts/init.js"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,7 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "@rollup/plugin-json": "^4.0.3",
     "lerna": "^3.20.2",
     "rollup-plugin-typescript2": "^0.27.0"
   }

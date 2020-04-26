@@ -15,7 +15,7 @@
         ],
         "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入。
         "rootDir": ".",
-        "allowJs": true,
+        // "allowJs": true,
         "jsx": "react",
         "strict": true,
         "importHelpers": true,
@@ -30,10 +30,7 @@
         "skipLibCheck": true,
     },
     "include": [
-        "src/*",
         "src/**/*",
-        "packages/*/src",
-        "packages/*/__tests__",
     ],
     "compileOnSave": true
 }

@@ -13,7 +13,6 @@ const packageOptions = pkg.buildOptions || {}
 
 const entryFile = `src/index.ts`
 
-
 let outputConfigs = {
     esm: {
         file: resolve(`dist/${name}.esm-browser.js`),

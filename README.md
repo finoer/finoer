@@ -56,7 +56,6 @@ npm run dev finoer-component-vue
 ```
 
 
-
 ### 编译命令
 
 ```shell
@@ -82,3 +81,11 @@ npm run doc finoer-component-vue
 
 
 ![](./static/images/project.png)
+## How to Run
+
+```bash
+
+git clone
+git submodule update --init --recursive
+
+```

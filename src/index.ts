@@ -1,9 +1,6 @@
-class a {
-    private name: string = "123"
-
-    getName() {
-        return this.name
+export const sum = (a: number, b: number) => {
+    if ('development' === process.env.NODE_ENV) {
+      console.log('boop');
     }
-}
-
-export default a
+    return a + b;
+  };

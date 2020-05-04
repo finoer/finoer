@@ -15,14 +15,18 @@
         ],
         "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入。
         "rootDir": ".",
+        "typeRoots": [
+            "node_modules/@types",
+            "src/@types"
+        ],
         // "allowJs": true,
         "jsx": "react",
         "strict": true,
         "importHelpers": true,
         "esModuleInterop": true,
-        "outDir": "dist",
+        "outDir": "src/dist",
         "declaration": true, 
-        "declarationDir": "dist/types",
+        "declarationDir": "src/dist/types",
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noImplicitReturns": true,

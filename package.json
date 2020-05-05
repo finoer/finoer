@@ -2,14 +2,14 @@
   "name": "fino-cli",
   "version": "0.0.1",
   "description": "The micro front framework tools",
-  "main": "./dist/index.js",
+  "main": "./src/index.js",
   "bin": {
     "fino": "./src/index.js"
   },
   "scripts": {
     "test": "jest",
     "start": "rollup -c -w",
-    "build-script": "tsc src/index.ts",
+    "build-cli": "rollup -c",
     "dev": "node scripts/dev.js",
     "build": "node scripts/build.js",
     "docs": "node scripts/docs.js",
@@ -42,7 +42,6 @@
     "axios": "^0.19.2",
     "chalk": "^4.0.0",
     "commander": "^5.1.0",
-    "consolidate": "^0.15.1",
     "download-git-repo": "^3.0.2",
     "ejs": "^3.1.2",
     "eslint": "^6.8.0",
@@ -67,7 +66,6 @@
     "chalk": "^4.0.0",
     "fs-extra": "^9.0.0",
     "glob": "^7.1.6",
-    "handlebars": "^4.7.6",
     "inquirer": "^7.1.0",
     "latest-version": "^5.1.0",
     "lerna": "^3.20.2",

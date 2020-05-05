@@ -16,10 +16,10 @@ module.exports =  {
     output: [
         {
             file: `${filePath}/index.js`,
-            format: `cjs`,
+            format: `esm`,
             sourceMaps: true
         },
-    ],  
+    ],
     watch: {
         include: 'src/**',
     },
@@ -28,7 +28,7 @@ module.exports =  {
             namedExports: false
         }),
         // Compile TypeScript files
-        typescript({ 
+        typescript({
             tsconfig: tsconfig,
             useTsconfigDeclarationDir: true,
             clean: true,

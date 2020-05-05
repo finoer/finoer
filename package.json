@@ -1,10 +1,10 @@
 {
   "name": "fino-cli",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "The micro front framework tools",
-  "main": "./src/index.js",
+  "main": "main.js",
   "bin": {
-    "fino": "./src/index.js"
+    "fino": "main.js"
   },
   "scripts": {
     "test": "jest",
@@ -19,6 +19,9 @@
     "type": "git",
     "url": "git+https://github.com/finoer/finoer.git"
   },
+  "files": [
+    "src"
+  ],
   "keywords": [
     "ts",
     "micro front"
@@ -46,6 +49,8 @@
     "ejs": "^3.1.2",
     "eslint": "^6.8.0",
     "jest": "^25.3.0",
+    "log-symbols": "^4.0.0",
+    "ora": "^4.0.4",
     "prettier": "^2.0.4",
     "rollup": "^2.6.1",
     "rollup-plugin-sourcemaps": "^0.5.0",

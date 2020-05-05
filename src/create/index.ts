@@ -20,8 +20,9 @@ export default function create(options: string) {
       message: 'plase choise a template to create project'
     }
   ]).then((answer) => {
-    // locate the generated directory genDirecty(projectName)
+    // locate the generated directory
     let next = Promise.resolve(projectName);
+    // let next = genDirecty(projectName)
 
     if(next) {
       // download template

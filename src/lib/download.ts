@@ -12,9 +12,6 @@ const download = require('download-git-repo')
 function downloadRepo(target: string, templateUrl: string): Promise<any> {
   target = path.join(downloadDirectory || '.',  target);
 
-  console.log('taget ------', target)
-
-
   return new Promise((resolve, reject) => {
     const spinner = ora(`正在下载项目模板，源地址：${templateUrl}`);
     spinner.start()

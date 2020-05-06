@@ -23,12 +23,12 @@ export const sum = (a: number, b: number) => {
 * @returns The arithmetic mean of `x` and `y`
 *
 * @beta
-*/
+
 function getAverage (x:number, y:number):number {
 return (x + y) / 2.0;
 }
 
-
+*/
 
 
 

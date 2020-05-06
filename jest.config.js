@@ -6,4 +6,5 @@ module.exports = {
     '<rootDir>/templates/', // don't run tests in the templates
     '<rootDir>/packages/', // don't run tests in the packages
   ],
+  preset:'ts-jest'
 };

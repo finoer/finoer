@@ -1,10 +1,15 @@
 {
-  "name": "finoer",
-  "version": "0.0.1",
+  "name": "fino-cli",
+  "version": "0.0.6",
   "description": "The micro front framework tools",
-  "main": "./dist/index.js",
+  "main": "main.js",
+  "bin": {
+    "fino": "main.js"
+  },
   "scripts": {
     "test": "jest",
+    "start": "rollup -c -w",
+    "build-cli": "rollup -c",
     "dev": "node scripts/dev.js",
     "build": "node scripts/build.js",
     "docs": "node scripts/docs.js",
@@ -14,6 +19,9 @@
     "type": "git",
     "url": "git+https://github.com/finoer/finoer.git"
   },
+  "files": [
+    "src"
+  ],
   "keywords": [
     "ts",
     "micro front"
@@ -26,15 +34,23 @@
   "homepage": "https://github.com/finoer/finoer#readme",
   "dependencies": {
     "@microsoft/tsdoc": "^0.12.19",
-    "@types/commander": "^2.12.2",
+    "@types/axios": "^0.14.0",
+    "@types/consolidate": "^0.14.0",
+    "@types/ejs": "^3.0.3",
+    "@types/fs-extra": "^8.1.0",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.13.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.28.0",
+    "axios": "^0.19.2",
     "chalk": "^4.0.0",
     "commander": "^5.1.0",
+    "download-git-repo": "^3.0.2",
+    "ejs": "^3.1.2",
     "eslint": "^6.8.0",
     "jest": "^25.3.0",
+    "log-symbols": "^4.0.0",
+    "ora": "^4.0.4",
     "prettier": "^2.0.4",
     "rollup": "^2.6.1",
     "rollup-plugin-sourcemaps": "^0.5.0",
@@ -49,8 +65,19 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-typescript": "^7.9.0",
     "@rollup/plugin-json": "^4.0.3",
+    "@types/inquirer": "^6.5.0",
+    "@types/metalsmith": "^2.3.0",
     "babel-jest": "^25.4.0",
+    "chalk": "^4.0.0",
+    "fs-extra": "^9.0.0",
+    "glob": "^7.1.6",
+    "inquirer": "^7.1.0",
+    "latest-version": "^5.1.0",
     "lerna": "^3.20.2",
+    "log-symbols": "^4.0.0",
+    "metalsmith": "^2.3.0",
+    "ora": "^4.0.4",
+    "rimraf": "^3.0.2",
     "rollup-plugin-typescript2": "^0.27.0"
   }
 }

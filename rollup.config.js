@@ -1,57 +1,39 @@
-import path from 'path'
 import typescript from 'rollup-plugin-typescript2'
+import sourceMaps from "rollup-plugin-sourcemaps";
 import json from '@rollup/plugin-json'
+const path = require('path')
 
-// 定位包所在的目录
-const packagesDir = path.resolve(__dirname, 'packages');
-const packageDir = path.resolve(packagesDir, process.env.TARGET)
+const pkg = require('./package.json')
 
-const name = path.basename(packageDir);
-const resolve = p => path.resolve(packageDir, p);
-const pkg = require(resolve(`package.json`))
-const packageOptions = pkg.buildOptions || {}
+const name = pkg.name
 
-const entryFile = `src/index.ts`
+let filePath = path.resolve(__dirname, './src/dist')
 
-let outputConfigs = {
-    esm: {
-        file: resolve(`dist/${name}.esm-browser.js`),
-        format: `es`
+const tsconfig = path.resolve(__dirname, 'tsconfig.json')
+
+module.exports =  {
+    input: `src/index.ts`,
+    output: [
+        {
+            file: `${filePath}/index.js`,
+            format: `esm`,
+            sourceMaps: true
+        },
+    ],
+    watch: {
+        include: 'src/**',
     },
-    cjs: {
-        file: resolve(`dist/${name}.cjs.js`),
-        format: `cjs`
-    },
-    global: {
-        file: resolve(`dist/${name}.global.js`),
-        format: `iife`
-    },
-}
-
-// 默认打包方法
-const defaultFormats = ['esm', 'cjs']
-const packageFormats = packageOptions.formats || defaultFormats
-const packageConfigs = packageFormats.map(format => createConfig(outputConfigs[format]))
-
-export default packageConfigs
-
-function createConfig(output, plugins = []) {
-    return {
-        input: resolve(entryFile),
-        output,
-        plugins: [
-            json({
-              namedExports: false
-            }),
-            typescript({
-                tsconfig: path.resolve(__dirname, 'tsconfig.json'),
-                tsconfigOverride: {
-                  compilerOptions: {
-                    sourceMap: output.sourcemap,
-                  },
-                  exclude: ['**/__tests__', 'test-dts']
-                }
-            })
-        ]
-    }
+    plugins: [
+        json({
+            namedExports: false
+        }),
+        // Compile TypeScript files
+        typescript({
+            tsconfig: tsconfig,
+            useTsconfigDeclarationDir: true,
+            clean: true,
+            abortOnError: true
+        }),
+        sourceMaps()
+    ]
 }

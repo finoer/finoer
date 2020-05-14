@@ -1,8 +1,7 @@
 import path from 'path'
 import ora from 'ora'
 import { downloadDirectory } from './contants';
-
-const download = require('download-git-repo')
+import download from '@snower/d';
 
 /**
  * @func  clone the code repository remotely
@@ -13,9 +12,10 @@ function downloadRepo(target: string, templateUrl: string): Promise<any> {
   target = path.join(downloadDirectory || '.',  target);
 
   return new Promise((resolve, reject) => {
-    const spinner = ora(`正在下载项目模板，源地址：${templateUrl}`);
+    const spinner = ora(`Downloading the template from ${templateUrl}`);
     spinner.start()
-    download(templateUrl, target, { clone: true }, (err: any) => {
+    const d = new download();
+    d.download(templateUrl, target, { clone: true }, (err: any) => {
       if(err) {
           spinner.fail()
           reject(err)

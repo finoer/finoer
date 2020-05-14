@@ -7,7 +7,7 @@ const pkg = require('./package.json')
 
 const name = pkg.name
 
-let filePath = path.resolve(__dirname, './src/dist')
+let filePath = path.resolve(__dirname, 'dist')
 
 const tsconfig = path.resolve(__dirname, 'tsconfig.json')
 
@@ -16,7 +16,7 @@ module.exports =  {
     output: [
         {
             file: `${filePath}/index.js`,
-            format: `esm`,
+            format: `cjs`,
             sourceMaps: true
         },
     ],

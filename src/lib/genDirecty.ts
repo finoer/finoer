@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import inquirer from 'inquirer'
 
-// 此文件暂时不用， 后续优化时会用到， 用于兼容用户选择的文件夹
+// todo：此文件暂时不用， 后续优化时会用到， 用于兼容用户选择的文件夹
 /**
  *
  * @param projectName
@@ -14,7 +14,7 @@ export default function genDirecty(projectName: string): Promise<string> | undef
 
   if(list.length) {
     if(list.filter((name) => isDirecty(name, projectName)).length !== 0) {
-      console.log(`项目${projectName}已经存在`)
+      console.log(`Project ${projectName} already exist`)
       return
     }
 

@@ -18,3 +18,6 @@
 	path = templates/fino-child-vue
 	url = https://github.com/finoer/fino-child-vue.git
 	branch = master
+[submodule "templates/fino-base"]
+	path = templates/fino-base
+	url = https://github.com/finoer/fino-base.git

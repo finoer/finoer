@@ -65,7 +65,7 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-typescript": "^7.9.0",
     "@rollup/plugin-json": "^4.0.3",
-    "@snower/d": "0.0.10",
+    "@snower/d": "0.0.11",
     "@types/inquirer": "^6.5.0",
     "@types/metalsmith": "^2.3.0",
     "babel-jest": "^25.4.0",

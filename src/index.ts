@@ -27,10 +27,7 @@ export const sum = (a: number, b: number) => {
 function getAverage (x:number, y:number):number {
 return (x + y) / 2.0;
 }
-
 */
-
-
 
 program.version(packageInfo.version)
 

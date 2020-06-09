@@ -21,3 +21,6 @@
 [submodule "templates/fino-base"]
 	path = templates/fino-base
 	url = https://github.com/finoer/fino-base.git
+[submodule "packages/finoer-lib"]
+	path = packages/finoer-lib
+	url = https://github.com/finoer/finoer-lib.git

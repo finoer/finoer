@@ -33,7 +33,7 @@
         "skipLibCheck": true,
     },
     "include": [
-        "src/**/*",
+        "src/**/*"
     ],
     "compileOnSave": true
 }

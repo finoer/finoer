@@ -34,7 +34,7 @@ export default function download(next: Promise<string>, url: string) {
         {
             name: 'author',
             message: 'author',
-            default: 'yueqi'
+            default: 'author'
         },
         {
             name: 'description',

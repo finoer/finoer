@@ -21,7 +21,7 @@ export default function generate(context: MetaData) {
   let dest = './' + context.root;
 
   if(!src) {
-      return Promise.reject(new Error(`无效的sourse: ${src}`))
+      return Promise.reject(new Error(`Please check the sourse: ${src}`))
   }
 
   return new Promise((resolve, reject) => {

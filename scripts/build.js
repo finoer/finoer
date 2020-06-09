@@ -8,7 +8,7 @@ const rootPath = getTargetPath(args, '');
 const configFile = getTargetPath(args, 'rollup.config.js');
 
 execa(
-    'rollup', 
+    'rollup',
     [
         `-c${configFile}`,
     ],

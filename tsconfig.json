@@ -35,5 +35,9 @@
     "include": [
         "src/**/*",
     ],
-    "compileOnSave": true
+    "compileOnSave": true,
+    "files": [],
+    "references": [
+        { "path": "./packages/finoer-core" }
+    ]
 }

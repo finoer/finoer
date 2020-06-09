@@ -42,7 +42,7 @@ export default function download(next: Promise<string>, url: string) {
             default: `A project named ${context.name}`
         }
       ]).then(answers=> {
-          const metaData = {
+          const metaData: any = {
             ...context,
             metadata: {
                 ...answers

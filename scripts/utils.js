@@ -4,31 +4,37 @@ const chalk = require('chalk')
 const path = require('path');
 const args = require('minimist')(process.argv.slice(2))
 
-const targets = (exports.targets = fs.readdirSync('packages').filter(f => {
-    if (!fs.statSync(`packages/${f}`).isDirectory()) {
-        return false
-    }
-    const pkg = require(`../packages/${f}/package.json`)
-    if (pkg.private && !pkg.buildOptions) {
-        return false
-    }
-    return true
+let targets = (exports.targets = fs.readdirSync('packages').filter(f => {
+  return getChildProject(f, 'packages')
 }))
+
+let templates = (exports.targets = fs.readdirSync('templates').filter(f => {
+  return getChildProject(f, 'templates')
+}))
+
+targets = targets.concat(templates);
+
+function getChildProject(flodar, name) {
+  if (!fs.statSync(`${name}/${flodar}`).isDirectory()) {
+    return false
+  }
+  const pkg = require(`../${name}/${flodar}/package.json`)
+  if (pkg.private && !pkg.buildOptions) {
+      return false
+  }
+  return true
+}
 
 function fuzzyMatchTarget(partialTargets, includeAllMatching) {
     const matched = []
     partialTargets.forEach(partialTarget => {
+      console.log(targets)
+      for (const target of targets) {
 
-        for (const target of targets) {
-            if (target.match(partialTarget)) {
-                matched.push(target)
-                console.log('matched', matched)
-
-                if (!includeAllMatching) {
-                    break
-                }
-            }
+        if (target.match(partialTarget)) {
+            matched.push(target)
         }
+      }
     })
     if (matched.length) {
         return matched
@@ -45,12 +51,16 @@ function fuzzyMatchTarget(partialTargets, includeAllMatching) {
     }
 }
 
-function getTargetPath(args, fileName) {
+function getTargetPath(args, fileName, fileType) {
+    console.log('target', args._.length)
 
     const target = args._.length ? fuzzyMatchTarget(args._)[0] : 'finoer-core'
 
+    const fileParentFlodar = fileType || 'packages'
+
     // 定位包所在的目录
-    const packagesDir = path.resolve(__dirname, '../packages');
+    const packagesDir = path.resolve(__dirname, `../${fileParentFlodar}`);
+
     const packageDir = path.resolve(packagesDir, target)
     const resolve = p => path.resolve(packageDir, p);
 

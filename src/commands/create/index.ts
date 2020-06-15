@@ -1,4 +1,5 @@
 import fs from 'fs-extra'
+import execa from 'execa'
 import MetalSmith from 'metalsmith'
 import inquirer, { Answers } from 'inquirer';
 import logSymbols from 'log-symbols'
@@ -49,13 +50,13 @@ class Creator {
     await waitFnloading<string>(download, '🚀 downloading Repo....')(answer.template, cacheArray[1]);
 
     // reading the base directory and operate on the target template
-    const operateDirecty = fs.readdirSync(cacheArray[0], 'utf-8');
+    const operateJson = JSON.parse(fs.readFileSync(`${cacheArray[0]}/operate.json`,'utf8'));
+
     // get remote template name
     const remoteProjectReg = /(https\:\/\/github\.com\:finoer\/)|(\#[A-Za-z]*)/g;
     const remoteProject = answer.template.replace(remoteProjectReg, '');
 
-    if(operateDirecty.includes('operate.json')) {
-      const operateJson = JSON.parse(fs.readFileSync(`${cacheArray[0]}/operate.json`,'utf8'));
+    if(operateJson[remoteProject]) {
 
       // remove target folder file
       await this.removeMultipleDir(operateJson[remoteProject].delete, cacheArray[1]);
@@ -71,14 +72,14 @@ class Creator {
       .use(async (files: MetalSmith.Files, metal: MetalSmith, done: MetalSmith.Callback) => {
 
         // set basic project information like project name, author, description....
-        const projectInfoPrompt: OutroPrompts[] = JSON.parse(fs.readFileSync(`${cacheArray[0]}/${remoteProject}/promts.json`,'utf8'));
+        const projectInfoPrompt: OutroPrompts[] = JSON.parse(fs.readFileSync(`${cacheArray[0]}/${remoteProject}/prompts.json`,'utf8'));
         const projectInfo = await inquirer.prompt(projectInfoPrompt);
 
         const meta = metal.metadata();
 
         Object.assign(meta, projectInfo);
 
-        delete files['promts.json']
+        delete files['prompts.json']
 
         done(null, files, metal);
       })
@@ -96,8 +97,12 @@ class Creator {
         done(null, files, metal);
       })
       .build(() => {
-        console.log(logSymbols.success, chalk.green('创建成功:)'))
-        console.log(chalk.green('cd ' + this.targetDir + '\nnpm install\nnpm run dev'))
+        console.log(logSymbols.success, chalk.green('创建成功:)，准备执行install～'));
+
+        this.server()
+
+        // ExtensionScriptApis()
+
       });
   }
 
@@ -107,21 +112,40 @@ class Creator {
    * @param dirs
    */
   async removeMultipleDir(dirArray: string[], base?: string, ) {
-    const basePath = base || ''
+    if(!dirArray) { return }
+
+    const basePath = base ? base + '/' : ''
+
     for(let i = 0; i < dirArray.length; i ++) {
       const targetFile = dirArray[i];
-
-      await fs.remove(`${basePath}/${targetFile}`);
+      await fs.remove(`${basePath}${targetFile}`);
     }
   }
 
   async copyMultipleDir(dirArray: string[], dest: string,  base?: string, ) {
-    const basePath = base || ''
+    if(!dirArray) { return }
+
+    const basePath = base ? base + '/' : ''
     for(let i = 0; i < dirArray.length; i ++) {
       const targetFile = dirArray[i];
 
       await fs.copySync(`${basePath}/${targetFile}`, dest);
     }
+  }
+
+  server() {
+    execa('cnpm', ['install'], {
+      cwd: this.targetDir,
+      stdio: 'inherit'
+    }).then(result => {
+      console.log(chalk.green(result));
+      execa('npm', ['run', 'dev'], {
+        cwd: this.targetDir,
+        stdio: 'inherit'
+      }).then(res => {
+        console.log(chalk.green(res));
+      })
+    })
   }
 }
 

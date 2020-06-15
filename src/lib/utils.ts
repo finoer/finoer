@@ -46,7 +46,6 @@ export function download(api: string, dest: string) {
 
 }
 
-
 function camelize(key: string) {
   return key.replace(/-(\w)/g, (_, c) => c ? c.toUpperCase() : '')
 }

@@ -8,7 +8,7 @@ const docsGet = getTargetPath(args, 'src');
 const rootPath = getTargetPath(args, '');
 
 execa(
-    'typedoc', 
+    'typedoc',
     [
         `--out`,
         `${docsFile}`,

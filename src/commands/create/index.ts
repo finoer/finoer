@@ -137,12 +137,12 @@ class Creator {
     execa('cnpm', ['install'], {
       cwd: this.targetDir,
       stdio: 'inherit'
-    }).then(result => {
+    }).then((result: execa.ExecaReturnValue<string>) => {
       console.log(chalk.green(result));
       execa('npm', ['run', 'dev'], {
         cwd: this.targetDir,
         stdio: 'inherit'
-      }).then(res => {
+      }).then((res: execa.ExecaReturnValue<string>) => {
         console.log(chalk.green(res));
       })
     })

@@ -12,28 +12,28 @@ let filePath = path.resolve(__dirname, 'dist')
 const tsconfig = path.resolve(__dirname, 'tsconfig.json')
 
 module.exports =  {
-    input: `src/index.ts`,
-    output: [
-        {
-            file: `${filePath}/index.js`,
-            format: `cjs`,
-            sourceMaps: true
-        },
-    ],
-    watch: {
-        include: 'src/**',
+  input: `src/index.ts`,
+  output: [
+    {
+      file: `${filePath}/index.js`,
+      format: `cjs`,
+      sourceMaps: true
     },
-    plugins: [
-        json({
-            namedExports: false
-        }),
-        // Compile TypeScript files
-        typescript({
-            tsconfig: tsconfig,
-            useTsconfigDeclarationDir: true,
-            clean: true,
-            abortOnError: true
-        }),
-        sourceMaps()
-    ]
+  ],
+  watch: {
+    include: 'src/**',
+  },
+  plugins: [
+    json({
+      namedExports: false
+    }),
+    // Compile TypeScript files
+    typescript({
+      tsconfig: tsconfig,
+      useTsconfigDeclarationDir: true,
+      clean: true,
+      abortOnError: true
+    }),
+    sourceMaps()
+  ]
 }

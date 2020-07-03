@@ -9,5 +9,12 @@ module.exports = {
             "error",
             "interface"
         ]
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
     }
 }

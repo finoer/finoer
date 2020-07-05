@@ -14,7 +14,7 @@
     "build": "node scripts/build.js",
     "docs": "node scripts/docs.js",
     "template": "node scripts/template.js",
-    "template:base": "concurrently \"npm run template fino-base\" \"tsc -b -w --force --verbose\"",
+    "template:base": "concurrently \"npm run template fino-base\" \"tsc -b -w --force\"",
     "init": "npm install && lerna bootstrap",
     "eslint": "eslint src --ext .ts"
   },

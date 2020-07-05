@@ -1,7 +1,8 @@
 {
   "packages": [
     "packages/*",
-    "templates/*"
+    "templates/*",
+    "./*"
   ],
   "version": "independent"
 }

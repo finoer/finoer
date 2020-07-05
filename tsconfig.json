@@ -11,7 +11,8 @@
             "dom.Iterable"
         ],
         "types": [
-            "node","jest"
+            "node",
+            "jest"
         ],
         "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入。
         "rootDir": ".",
@@ -24,7 +25,7 @@
         "importHelpers": true,
         "esModuleInterop": true,
         "outDir": "dist",
-        "declaration": true, 
+        "declaration": true,
         "declarationDir": "dist/types",
         "noUnusedLocals": true,
         "noUnusedParameters": true,
@@ -33,11 +34,17 @@
         "skipLibCheck": true,
     },
     "include": [
-        "src/**/*"
+        "templates/**/*",
+        "packages/**/*",
     ],
     "compileOnSave": true,
     "files": [],
     "references": [
-        { "path": "./packages/finoer-core" }
+        {
+            "path": "./packages/finoer-lib"
+        },
+        {
+            "path": "./packages/package-startup"
+        }
     ]
 }

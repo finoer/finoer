@@ -8,7 +8,8 @@
             "ES2015",
             "ES5",
             "esnext",
-            "dom.Iterable"
+            "dom.Iterable",
+            "scripthost"
         ],
         "types": [
             "node",
@@ -41,10 +42,7 @@
     "files": [],
     "references": [
         {
-            "path": "./packages/finoer-lib"
-        },
-        {
-            "path": "./packages/package-startup"
+            "path": "./packages/finoer-invoke"
         }
     ]
 }

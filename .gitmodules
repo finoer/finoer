@@ -24,6 +24,6 @@
 [submodule "packages/finoer-lib"]
 	path = packages/finoer-lib
 	url = https://github.com/finoer/finoer-lib.git
-[submodule "packages/package-startup"]
-	path = packages/package-startup
-	url = https://github.com/finoer/package-startup.git
+[submodule "packages/finoer-invoke"]
+	path = packages/finoer-invoke
+	url = https://github.com/finoer/finoer-invoke.git

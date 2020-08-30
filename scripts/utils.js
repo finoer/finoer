@@ -29,6 +29,9 @@ function getChildProject(flodar, name) {
 
 function fuzzyMatchTarget(partialTargets, includeAllMatching) {
   const matched = []
+
+  console.log('target----------', templates)
+
   partialTargets.forEach(partialTarget => {
     for (const target of targets) {
 
@@ -52,8 +55,8 @@ function fuzzyMatchTarget(partialTargets, includeAllMatching) {
 }
 
 function getTargetPath(args, fileName, fileType) {
-  const target = args._.length ? fuzzyMatchTarget(args._)[0] : 'finoer-core'
 
+  const target = args._.length ? fuzzyMatchTarget(args._)[0] : 'finoer-core'
   const fileParentFlodar = fileType || 'packages'
 
   // 定位包所在的目录

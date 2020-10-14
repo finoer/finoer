@@ -35,14 +35,16 @@
         "skipLibCheck": true,
     },
     "include": [
-        "templates/**/*",
         "packages/**/*",
     ],
     "compileOnSave": true,
     "files": [],
     "references": [
         {
-            "path": "./packages/finoer-invoke"
-        }
+            "path": "./packages/finoer-invoke",
+        },
+        {
+            "path": "./packages/finoer-lib",
+        },
     ]
 }

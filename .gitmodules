@@ -19,3 +19,6 @@
 [submodule "packages/finoer-invoke"]
 	path = packages/finoer-invoke
 	url = https://github.com/finoer/finoer-invoke.git
+[submodule "packages/finoer-store"]
+	path = packages/finoer-store
+	url = https://github.com/finoer/finoer-store.git

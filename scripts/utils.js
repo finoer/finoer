@@ -30,7 +30,7 @@ function getChildProject(flodar, name) {
 function fuzzyMatchTarget(partialTargets, includeAllMatching) {
   const matched = []
 
-  console.log('target----------', templates)
+  console.log('target----------', partialTargets)
 
   partialTargets.forEach(partialTarget => {
     for (const target of targets) {

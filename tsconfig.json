@@ -41,10 +41,7 @@
     "files": [],
     "references": [
         {
-            "path": "./packages/finoer-invoke",
-        },
-        {
-            "path": "./packages/finoer-lib",
-        },
+            "path": "./packages/finoer-invoke"
+        }
     ]
 }

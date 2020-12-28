@@ -1,7 +1,3 @@
-[submodule "packages/finoer-core"]
-	path = packages/finoer-core
-	url = https://github.com/finoer/finoer-core.git
-    branch = master
 [submodule "packages/finoer-component-vue"]
 	path = packages/finoer-component-vue
 	url = https://github.com/finoer/finoer-component-vue.git
@@ -13,10 +9,6 @@
 [submodule "templates/fino-child"]
 	path = templates/fino-child
 	url = https://github.com/finoer/fino-child.git
-	branch = master
-[submodule "templates/fino-child-vue"]
-	path = templates/fino-child-vue
-	url = https://github.com/finoer/fino-child-vue.git
 	branch = master
 [submodule "templates/fino-base"]
 	path = templates/fino-base

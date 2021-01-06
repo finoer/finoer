@@ -14,5 +14,7 @@ const configFile = getTargetPath(args, 'rollup.config.js');
 if(mode === 'package') {
   shell.exec(`concurrently \"lerna run start\" \"node scripts/dev.js ${target}\"`, {  })
 }else {
-  shell.exec(`concurrently \"tsc -b -w --force\" \"node scripts/template.js ${target}\"`)
+  // shell.exec(`concurrently \"tsc -b -w --force\" \"node scripts/template.js ${target}\"`)
+  shell.exec(`concurrently \"npm run dev finoer-invoke\" \"node scripts/template.js ${target}\"`)
+
 }

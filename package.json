@@ -37,6 +37,8 @@
   },
   "homepage": "https://github.com/finoer/finoer#readme",
   "dependencies": {
+    "@finoer/finoer-invoke": "^0.0.5",
+    "@finoer/finoer-store": "^0.0.1",
     "@microsoft/tsdoc": "^0.12.19",
     "@types/axios": "^0.14.0",
     "@types/consolidate": "^0.14.0",

@@ -6,7 +6,7 @@ import logSymbols from 'log-symbols'
 import chalk from 'chalk'
 import { catchDownloadDirectory } from "../../lib/constants";
 import { waitFnloading, download } from '../../lib/utils';
-import { templatePrompts, OutroPrompts } from '../../template/prompts';
+import { OutroPrompts } from '../../template/prompts';
 
 /**
 *  class for project roject creation tool
@@ -43,9 +43,12 @@ class Creator {
     // get remote basic projects
     await waitFnloading<string>(download, '🚀 fetching template from remote....')('https://github.com:finoer/fino#dev', cacheArray[0]);
 
+    const templateList = JSON.parse(fs.readFileSync(`${cacheArray[0]}/templates.json`, 'utf8'));
+
+    const templatePrompts = new OutroPrompts('list', 'template', 'plase choise a template to create project', templateList);
+
     // select the template that the user needs to create
     const answer: Answers = await inquirer.prompt([templatePrompts]);
-
     // downloading repo from remote
     await waitFnloading<string>(download, '🚀 downloading Repo....')(answer.template, cacheArray[1]);
 
@@ -56,6 +59,7 @@ class Creator {
     const remoteProjectReg = /(https\:\/\/github\.com\:finoer\/)|(\#[A-Za-z]*)/g;
     const remoteProject = answer.template.replace(remoteProjectReg, '');
 
+    /** */
     if (operateJson[remoteProject]) {
 
       // remove target folder file
@@ -72,7 +76,7 @@ class Creator {
       .use(async (files: MetalSmith.Files, metal: MetalSmith, done: MetalSmith.Callback) => {
 
         // set basic project information like project name, author, description....
-        const projectInfoPrompt: OutroPrompts[] = JSON.parse(fs.readFileSync(`${cacheArray[0]}/${remoteProject}/prompts.json`, 'utf8'));
+        const projectInfoPrompt = operateJson[remoteProject].prompts
         const projectInfo = await inquirer.prompt(projectInfoPrompt);
 
         const meta = metal.metadata();
@@ -134,7 +138,7 @@ class Creator {
   }
 
   server() {
-    execa('cnpm', ['install'], {
+    execa('npm', ['install'], {
       cwd: this.targetDir,
       stdio: 'inherit'
     }).then((result: execa.ExecaReturnValue<string>) => {

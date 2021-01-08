@@ -1,6 +1,6 @@
 {
-  "name": "fino-cli",
-  "version": "0.0.6",
+  "name": "@finoer/fino-cli",
+  "version": "0.0.7",
   "description": "The micro front framework tools",
   "main": "main.js",
   "bin": {
@@ -13,6 +13,7 @@
     "dev": "npm run dev:base package",
     "template": "npm run dev:base template",
     "build:package": "node scripts/build.js",
+    "build": "rollup -c",
     "docs": "node scripts/docs.js",
     "template:base": "node scripts/template.js",
     "init:template": "node scripts/init.js",
@@ -24,7 +25,9 @@
     "url": "git+https://github.com/finoer/finoer.git"
   },
   "files": [
-    "src"
+    "src",
+    "dist",
+    "bin"
   ],
   "keywords": [
     "ts",
@@ -37,60 +40,48 @@
   },
   "homepage": "https://github.com/finoer/finoer#readme",
   "dependencies": {
-    "@finoer/finoer-invoke": "^0.0.5",
-    "@finoer/finoer-store": "^0.0.1",
-    "@microsoft/tsdoc": "^0.12.19",
     "@types/axios": "^0.14.0",
     "@types/consolidate": "^0.14.0",
     "@types/ejs": "^3.0.3",
     "@types/fs-extra": "^8.1.0",
     "@types/jest": "^25.2.1",
+    "@types/metalsmith": "^2.3.0",
     "@types/node": "^13.13.0",
-    "@typescript-eslint/eslint-plugin": "^2.29.0",
-    "@typescript-eslint/parser": "^2.28.0",
     "axios": "^0.19.2",
     "chalk": "^4.0.0",
     "commander": "^5.1.0",
     "ejs": "^3.1.2",
-    "eslint": "^6.8.0",
-    "import-html-entry": "^1.9.1",
     "jest": "^25.3.0",
     "log-symbols": "^4.0.0",
     "ora": "^4.0.4",
+    "shelljs": "^0.8.3",
+    "metalsmith": "^2.3.0",
+    "inquirer": "^7.1.0",
+    "fs-extra": "^9.0.0",
+    "@snower/d": "0.0.11"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.28.0",
+    "eslint": "^6.8.0",
+    "tslib": "^1.11.1",
+    "typedoc": "^0.17.4",
+    "@babel/core": "^7.9.0",
     "prettier": "^2.0.4",
     "rollup": "^2.6.1",
     "rollup-plugin-sourcemaps": "^0.5.0",
-    "sade": "^1.7.3",
-    "shelljs": "^0.8.3",
-    "tslib": "^1.11.1",
-    "typedoc": "^0.17.4",
     "typescript": "^3.8.3",
-    "vue": "^2.6.12",
-    "vue-router": "^3.4.3"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-typescript": "^7.9.0",
     "@rollup/plugin-json": "^4.0.3",
-    "@snower/d": "0.0.11",
     "@types/execa": "^2.0.0",
     "@types/inquirer": "^6.5.0",
-    "@types/metalsmith": "^2.3.0",
-    "@web-types/vue-router": "^3.1.0-1",
     "babel-jest": "^25.4.0",
-    "chalk": "^4.0.0",
     "concurrently": "^5.2.0",
-    "fs-extra": "^9.0.0",
     "glob": "^7.1.6",
-    "inquirer": "^7.1.0",
-    "latest-version": "^5.1.0",
     "lerna": "^3.22.1",
     "log-symbols": "^4.0.0",
-    "metalsmith": "^2.3.0",
-    "ora": "^4.0.4",
     "rimraf": "^3.0.2",
-    "rollup-plugin-typescript2": "^0.27.0",
-    "webpack-stats-plugin": "^0.3.2"
+    "rollup-plugin-typescript2": "^0.27.0"
   }
 }

@@ -16,8 +16,8 @@ export class Template {
     this.value = url;
   }
 }
-const parentTemplate = new Template('parent project', 'https://github.com:finoer/fino-base#dev', '基座模版')
-const childTemplate = new Template('child project', 'https://github.com:finoer/fino-child#dev', '子项目模版')
+const parentTemplate = new Template('parent project--', 'https://github.com:finoer/fino-base#dev', '基座模版')
+const childTemplate = new Template('child project--', 'https://github.com:finoer/fino-child-phaser#master', ' phaser项目模版')
 
 export const templateList: Template[] = [
   parentTemplate,

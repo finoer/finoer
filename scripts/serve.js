@@ -5,10 +5,12 @@ const { getTargetPath, fuzzyMatchTarget } = require('./utils')
 
 const args = require('minimist')(process.argv.slice(2))
 const mode = args._.length ? args._[0] : 'package'
-const target = args._.length ? fuzzyMatchTarget(args._)[0] : 'finoer-core'
+
+const target = args._.length ? fuzzyMatchTarget([args._[1]])[0] : 'finoer-core'
 
 const rootPath = getTargetPath(args, '');
 const configFile = getTargetPath(args, 'rollup.config.js');
+
 
 // return
 if(mode === 'package') {

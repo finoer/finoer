@@ -20,18 +20,22 @@ function getChildProject(flodar, name) {
   if (!fs.statSync(`${name}/${flodar}`).isDirectory()) {
     return false
   }
-  const pkg = require(`../${name}/${flodar}/package.json`)
-  if (pkg.private && !pkg.buildOptions) {
+  let pkg
+  try {
+    pkg = require(`../${name}/${flodar}/package.json`)
+  }catch {
     return false
+  }finally {
+    if (pkg.private && !pkg.buildOptions) {
+      return false
+    }
+    return true
   }
-  return true
+
 }
 
 function fuzzyMatchTarget(partialTargets, includeAllMatching) {
   const matched = []
-
-  console.log('target----------', partialTargets)
-
   partialTargets.forEach(partialTarget => {
     for (const target of targets) {
 
@@ -40,6 +44,9 @@ function fuzzyMatchTarget(partialTargets, includeAllMatching) {
       }
     }
   })
+
+  console.log('partialTargets',  partialTargets, targets)
+
   if (matched.length) {
     return matched
   } else {
@@ -55,6 +62,8 @@ function fuzzyMatchTarget(partialTargets, includeAllMatching) {
 }
 
 function getTargetPath(args, fileName, fileType) {
+
+  console.log('getTargetPath------', args, fileName)
 
   const target = args._.length ? fuzzyMatchTarget(args._)[0] : 'finoer-core'
   const fileParentFlodar = fileType || 'packages'

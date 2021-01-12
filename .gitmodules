@@ -17,3 +17,6 @@
 [submodule "templates/fino-template-phaser"]
 	path = templates/fino-template-phaser
 	url = https://github.com/finoer/fino-child-phaser.git
+[submodule "templates/fino-child-vue"]
+	path = templates/fino-child-vue
+	url = https://github.com/finoer/fino-child-vue.git

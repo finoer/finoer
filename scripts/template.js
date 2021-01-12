@@ -4,6 +4,7 @@ const { getTargetPath, fuzzyMatchTarget } = require('./utils')
 
 const args = require('minimist')(process.argv.slice(2))
 
+
 const rootPath = getTargetPath(args, '', 'templates');
 
 

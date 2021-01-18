@@ -10,7 +10,7 @@ The micro front framework tools
 npm install
 ```
 
-
+node /Users/wangdongxu/Desktop/butterfly/core/main.js
 > 开发已经存在模版
 
 - 在根目录下的tsconfing.json中的reference字段中确定需要监控的依赖包

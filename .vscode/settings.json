@@ -11,5 +11,11 @@
     "typescript.tsdk": "node_modules/typescript/lib",
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     }
 }

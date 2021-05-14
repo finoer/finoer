@@ -23,10 +23,10 @@ function getChildProject(flodar, name) {
   let pkg
   try {
     pkg = require(`../${name}/${flodar}/package.json`)
-  }catch {
+  } catch {
     return false
-  }finally {
-    if (pkg.private && !pkg.buildOptions) {
+  } finally {
+    if (pkg && pkg.private && !pkg.buildOptions) {
       return false
     }
     return true
@@ -45,7 +45,7 @@ function fuzzyMatchTarget(partialTargets, includeAllMatching) {
     }
   })
 
-  console.log('partialTargets',  partialTargets, targets)
+  console.log('partialTargets', partialTargets, targets)
 
   if (matched.length) {
     return matched
@@ -53,7 +53,7 @@ function fuzzyMatchTarget(partialTargets, includeAllMatching) {
     console.log()
     console.error(
       `  ${chalk.bgRed.white(' ERROR ')} ${chalk.red(
-          `Target ${chalk.underline(partialTargets)} not found!`
+        `Target ${chalk.underline(partialTargets)} not found!`
       )}`
     )
     console.log()

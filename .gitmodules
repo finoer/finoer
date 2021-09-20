@@ -1,0 +1,24 @@
+[submodule "packages/finoer-invoke"]
+	path = packages/finoer-invoke
+	url = https://github.com/finoer/finoer-invoke.git
+	branch = invoke
+[submodule "packages/finoer-lib"]
+	path = packages/finoer-lib
+	url = https://github.com/finoer/finoer-lib.git
+	branch = dev
+[submodule "packages/finoer-store"]
+	path = packages/finoer-store
+	url = https://github.com/finoer/finoer-store.git
+	branch = dev
+[submodule "templates/fino"]
+	path = templates/fino
+	url = https://github.com/finoer/fino.git
+	branch = dev
+[submodule "templates/fino-base"]
+	path = templates/fino-base
+	url = https://github.com/finoer/fino-base.git
+	branch = dev
+[submodule "templates/fino-child-vue"]
+	path = templates/fino-child-vue
+	url = https://github.com/finoer/fino-child-vue.git
+	branch = dev
